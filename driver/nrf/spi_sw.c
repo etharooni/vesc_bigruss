@@ -21,21 +21,32 @@
 #include "utils_math.h"
 #include <stdbool.h>
 
-// Private variables
-static bool m_init_done = false;
-static stm32_gpio_t *m_port_csn = NRF_PORT_CSN;
-static int m_pin_csn = NRF_PIN_CSN;
-static stm32_gpio_t *m_port_sck = NRF_PORT_SCK;
-static int m_pin_sck = NRF_PIN_SCK;
-static stm32_gpio_t *m_port_mosi = NRF_PORT_MOSI;
-static int m_pin_mosi = NRF_PIN_MOSI;
-static stm32_gpio_t *m_port_miso = NRF_PORT_MISO;
-static int m_pin_miso = NRF_PIN_MISO;
+	// Private variables
+	static bool m_init_done = false;
+	static stm32_gpio_t *m_port_csn;
+	static int m_pin_csn;
+	static stm32_gpio_t *m_port_sck;
+	static int m_pin_sck;
+	static stm32_gpio_t *m_port_mosi;
+	static int m_pin_mosi;
+	static stm32_gpio_t *m_port_miso;
+	static int m_pin_miso;
 
 // Private functions
 static void spi_sw_delay(void);
 
 void spi_sw_init(void) {
+
+#ifdef HW_HAS_PERMANENT_NRF
+	m_port_csn = NRF_PORT_CSN;
+	m_pin_csn = NRF_PIN_CSN;
+	m_port_sck = NRF_PORT_SCK;
+	m_pin_sck = NRF_PIN_SCK;
+	m_port_mosi = NRF_PORT_MOSI;
+	m_pin_mosi = NRF_PIN_MOSI;
+	m_port_miso = NRF_PORT_MISO;
+	m_pin_miso = NRF_PIN_MISO;
+#endif
 	if (!m_init_done) {
 		palSetPadMode(m_port_miso, m_pin_miso, PAL_MODE_INPUT);
 		palSetPadMode(m_port_csn, m_pin_csn, PAL_MODE_OUTPUT_PUSHPULL);
@@ -61,7 +72,6 @@ void spi_sw_change_pins(
 		stm32_gpio_t *port_sck, int pin_sck,
 		stm32_gpio_t *port_mosi, int pin_mosi,
 		stm32_gpio_t *port_miso, int pin_miso) {
-
 	bool init_was_done = m_init_done;
 
 	if (init_was_done) {
