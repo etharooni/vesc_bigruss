@@ -496,29 +496,31 @@
 #endif
 
 // NRF SW SPI (default to spi header pins)
-#ifndef NRF_PORT_CSN
-#define NRF_PORT_CSN			HW_SPI_PORT_NSS
-#endif
-#ifndef NRF_PIN_CSN
-#define NRF_PIN_CSN				HW_SPI_PIN_NSS
-#endif
-#ifndef NRF_PORT_SCK
-#define NRF_PORT_SCK			HW_SPI_PORT_SCK
-#endif
-#ifndef NRF_PIN_SCK
-#define NRF_PIN_SCK				HW_SPI_PIN_SCK
-#endif
-#ifndef NRF_PORT_MOSI
-#define NRF_PORT_MOSI			HW_SPI_PORT_MOSI
-#endif
-#ifndef NRF_PIN_MOSI
-#define NRF_PIN_MOSI			HW_SPI_PIN_MOSI
-#endif
-#ifndef NRF_PORT_MISO
-#define NRF_PORT_MISO			HW_SPI_PORT_MISO
-#endif
-#ifndef NRF_PIN_MISO
-#define NRF_PIN_MISO			HW_SPI_PIN_MISO
+#ifdef HW_SPI_DEV
+	#ifndef NRF_PORT_CSN
+	#define NRF_PORT_CSN			HW_SPI_PORT_NSS
+	#endif
+	#ifndef NRF_PIN_CSN
+	#define NRF_PIN_CSN				HW_SPI_PIN_NSS
+	#endif
+	#ifndef NRF_PORT_SCK
+	#define NRF_PORT_SCK			HW_SPI_PORT_SCK
+	#endif
+	#ifndef NRF_PIN_SCK
+	#define NRF_PIN_SCK				HW_SPI_PIN_SCK
+	#endif
+	#ifndef NRF_PORT_MOSI
+	#define NRF_PORT_MOSI			HW_SPI_PORT_MOSI
+	#endif
+	#ifndef NRF_PIN_MOSI
+	#define NRF_PIN_MOSI			HW_SPI_PIN_MOSI
+	#endif
+	#ifndef NRF_PORT_MISO
+	#define NRF_PORT_MISO			HW_SPI_PORT_MISO
+	#endif
+	#ifndef NRF_PIN_MISO
+	#define NRF_PIN_MISO			HW_SPI_PIN_MISO
+	#endif
 #endif
 
 // CAN device and port (default CAN1)
