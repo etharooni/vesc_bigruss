@@ -214,7 +214,7 @@
 #define READ_HALL3()			palReadPad(HW_HALL_ENC_GPIO3, HW_HALL_ENC_PIN3)
 
 // Override dead time. See the stm32f4 reference manual for calculating this value.
-#define HW_DEAD_TIME_NSEC		660.0 //todo!  need to check with oscilloscope
+#define HW_DEAD_TIME_NSEC		100.0 //todo!  need to check with oscilloscope
 
 // Default setting overrides
 #ifndef MCCONF_L_MIN_VOLTAGE
