@@ -121,7 +121,7 @@ void hw_setup_adc_channels(void) {
 	ADC_RegularChannelConfig(ADC1, ADC_CHAN_EXT1, 3, ADC_SampleTime_15Cycles); //6
 	ADC_RegularChannelConfig(ADC1, ADC_CHAN_TEMP_MOTOR, 4, ADC_SampleTime_15Cycles); //9
 	ADC_RegularChannelConfig(ADC1, ADC_Channel_Vrefint, 5, ADC_SampleTime_15Cycles); //12
-	ADC_RegularChannelConfig(ADC1, ADC_CHAN_PH2_TEMP, 6, ADC_SampleTime_15Cycles); //15
+	ADC_RegularChannelConfig(ADC1, ADC_CHAN_PH3_TEMP, 6, ADC_SampleTime_15Cycles); //15
 
 	// ADC2 regular channels
 	ADC_RegularChannelConfig(ADC2, ADC_CHAN_CURR2, 1, ADC_SampleTime_15Cycles); //1
@@ -134,7 +134,7 @@ void hw_setup_adc_channels(void) {
 	// ADC3 regular channels
 	ADC_RegularChannelConfig(ADC3, ADC_CHAN_CURR3, 1, ADC_SampleTime_15Cycles); //2
 	ADC_RegularChannelConfig(ADC3, ADC_CHAN_VSEN3, 2, ADC_SampleTime_15Cycles); //5
-	ADC_RegularChannelConfig(ADC3, ADC_CHAN_PH3_TEMP, 3, ADC_SampleTime_15Cycles); //8
+	ADC_RegularChannelConfig(ADC3, ADC_CHAN_PH2_TEMP, 3, ADC_SampleTime_15Cycles); //8
 	ADC_RegularChannelConfig(ADC3, ADC_CHAN_AN_IN, 4, ADC_SampleTime_15Cycles); //11
 	ADC_RegularChannelConfig(ADC3, ADC_CHAN_VSEN2, 5, ADC_SampleTime_15Cycles); //14
 	ADC_RegularChannelConfig(ADC3, ADC_CHAN_VSEN3, 6, ADC_SampleTime_15Cycles); //17

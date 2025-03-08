@@ -67,14 +67,14 @@
  *  5     (3):	IN2		SENS3
  *  6     (1):	IN6		ADC_EXT1 (buffered extra #3)
  *  7     (2):	IN8		ADC_EXT2 (header extra #2)
- *  8     (3):	IN5		TEMP_MOS_3
+ *  8     (3):	IN3		TEMP_MOS_2
  *  9     (1):	IN14	TEMP_MOTOR
  *  10    (2):	IN7		ADC_EXT3 (header extra #1)
  *  11    (3):	IN13	AN_IN
  *  12    (1):	Vrefint
  *  13    (2):	IN4		ISEN_BIAS
  *  14    (3):	IN1		SENS2
- *  15    (1):  IN3		TEMP_MOS_2
+ *  15    (1):  IN5		TEMP_MOS_3
  *  16    (2):  IN15	TEMP_MOS
  *  17    (3):  IN3		SENS3
  */
@@ -92,13 +92,13 @@
 #define ADC_IND_SENS3			5
 #define ADC_IND_EXT				6
 #define ADC_IND_EXT2			7
-#define ADC_IND_TEMP_MOS_3		8
+#define ADC_IND_TEMP_MOS_2		8
 #define ADC_IND_TEMP_MOTOR		9
 #define ADC_IND_EXT3			10
 #define ADC_IND_VIN_SENS		11
 #define ADC_IND_VREFINT			12
 #define ADC_IND_ISEN_BIAS		13 //not implemented
-#define ADC_IND_TEMP_MOS_2		15
+#define ADC_IND_TEMP_MOS_3		15
 #define ADC_IND_TEMP_MOS		16
 
 // ADC macros and settings
