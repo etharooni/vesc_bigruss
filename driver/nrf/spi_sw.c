@@ -36,6 +36,7 @@
 static void spi_sw_delay(void);
 
 void spi_sw_init(void) {
+	return;
 
 #ifdef HW_HAS_PERMANENT_NRF
 	m_port_csn = NRF_PORT_CSN;
@@ -60,6 +61,7 @@ void spi_sw_init(void) {
 }
 
 void spi_sw_stop(void) {
+	return;
 	palSetPadMode(m_port_miso, m_pin_miso, PAL_MODE_INPUT);
 	palSetPadMode(m_port_csn, m_pin_csn, PAL_MODE_INPUT);
 	palSetPadMode(m_port_sck, m_pin_sck, PAL_MODE_INPUT);
@@ -77,7 +79,7 @@ void spi_sw_change_pins(
 	if (init_was_done) {
 		spi_sw_stop();
 	}
-
+	return;
 	m_port_csn = port_csn;
 	m_pin_csn = pin_csn;
 	m_port_sck = port_sck;
@@ -93,6 +95,7 @@ void spi_sw_change_pins(
 }
 
 void spi_sw_transfer(char *in_buf, const char *out_buf, int length) {
+	return;
 	palClearPad(m_port_sck, m_pin_sck);
 	spi_sw_delay();
 
@@ -130,16 +133,19 @@ void spi_sw_transfer(char *in_buf, const char *out_buf, int length) {
 }
 
 void spi_sw_begin(void) {
+	return;
 	palClearPad(m_port_csn, m_pin_csn);
 	spi_sw_delay();
 }
 
 void spi_sw_end(void) {
+	return;
 	spi_sw_delay();
 	palSetPad(m_port_csn, m_pin_csn);
 }
 
 static void spi_sw_delay(void) {
+	return;
 	for (volatile int i = 0;i < 5;i++) {
 		__NOP();
 	}
